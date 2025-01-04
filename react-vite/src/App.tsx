@@ -32,7 +32,17 @@ function App() {
           { icons: true, label: "Foo" },
           { icons: true, label: "Baz" },
         ]}
+        indent={8}
+        indentGuides
+        onvsc-tree-select={(ev) => {
+          console.log(ev);
+        }}
       ></vscode-tree>
+      <vscode-checkbox
+        onChange={() => {
+          console.log("change");
+        }}
+      >Checkbox example</vscode-checkbox>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
