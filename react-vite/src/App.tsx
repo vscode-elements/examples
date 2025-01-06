@@ -12,7 +12,6 @@ import "@vscode-elements/elements/dist/vscode-radio";
 import "@vscode-elements/elements/dist/vscode-radio-group";
 import "@vscode-elements/elements/dist/vscode-textfield";
 import "@vscode-elements/elements/dist/vscode-tree";
-import "@vscode-elements/webview-playground/dist/dev-toolbar.js";
 
 if (import.meta.env.DEV) {
   await import("@vscode-elements/webview-playground");
@@ -25,7 +24,7 @@ function App() {
 
   return (
     <>
-      <vscode-dev-toolbar></vscode-dev-toolbar>
+      {import.meta.env.DEV ? <vscode-dev-toolbar></vscode-dev-toolbar> : null}
       <vscode-button>Hello</vscode-button>
       <vscode-tree
         data={[
@@ -42,7 +41,16 @@ function App() {
         onChange={() => {
           console.log("change");
         }}
-      >Checkbox example</vscode-checkbox>
+      >
+        Checkbox example
+      </vscode-checkbox>
+      <vscode-split-layout
+        initialHandlePosition=""
+        onvsc-split-layout-change={(e) => {
+          console.log(e);
+        }}
+      ></vscode-split-layout>
+      <vscode-badge></vscode-badge>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
