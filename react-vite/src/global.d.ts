@@ -32,6 +32,7 @@ import {
   VscodeTextfield,
   VscodeTree,
 } from "@vscode-elements/elements";
+import type { VscCollapsibleToggleEvent } from "@vscode-elements/elements/dist/vscode-collapsible/vscode-collapsible";
 import { VscContextMenuSelectEvent } from "@vscode-elements/elements/dist/vscode-context-menu/vscode-context-menu";
 import {
   VscodeSplitLayout,
@@ -62,7 +63,9 @@ declare module "react" {
       "vscode-button": WebComponentProps<VscodeButton>;
       "vscode-checkbox": WebComponentProps<VscodeCheckbox>;
       "vscode-checkbox-group": WebComponentProps<VscodeCheckboxGroup>;
-      "vscode-collapsible": WebComponentProps<VscodeCollapsible>;
+      "vscode-collapsible": WebComponentProps<VscodeCollapsible> & {
+        "onvsc-collapsible-toggle"?: CustomEventHandler<VscCollapsibleToggleEvent>;
+      };
       "vscode-context-menu": WebComponentProps<VscodeContextMenu> & {
         "onvsc-context-menu-select"?: CustomEventHandler<VscContextMenuSelectEvent>;
       };
