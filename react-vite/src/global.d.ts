@@ -33,12 +33,12 @@ import {
   VscodeTree,
 } from "@vscode-elements/elements";
 import type { VscCollapsibleToggleEvent } from "@vscode-elements/elements/dist/vscode-collapsible/vscode-collapsible";
-import { VscContextMenuSelectEvent } from "@vscode-elements/elements/dist/vscode-context-menu/vscode-context-menu";
-import {
+import type { VscContextMenuSelectEvent } from "@vscode-elements/elements/dist/vscode-context-menu/vscode-context-menu";
+import type {
   VscodeSplitLayout,
   VscSplitLayoutChangeEvent,
 } from "@vscode-elements/elements/dist/vscode-split-layout/vscode-split-layout";
-import { VscTabsSelectEvent } from "@vscode-elements/elements/dist/vscode-tabs/vscode-tabs";
+import type { VscTabsSelectEvent } from "@vscode-elements/elements/dist/vscode-tabs/vscode-tabs";
 import type {
   VscTreeActionEvent,
   VscTreeSelectEvent,
@@ -47,7 +47,7 @@ import type {
 type ElementProps<I> = Partial<Omit<I, keyof HTMLElement>>;
 type CustomEventHandler<E> = (e: E) => void;
 
-export type WebComponentProps<I extends HTMLElement> = React.DetailedHTMLProps<
+type WebComponentProps<I extends HTMLElement> = React.DetailedHTMLProps<
   React.HTMLAttributes<I>,
   I
 > &
